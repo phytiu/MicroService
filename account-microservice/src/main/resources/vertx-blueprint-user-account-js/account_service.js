@@ -29,8 +29,8 @@ var Account = io.vertx.blueprint.microservice.account.Account;
  </p>
 
  @class
- */
-var AccountService = function (j_val) {
+*/
+var AccountService = function(j_val) {
 
   var j_accountService = j_val;
   var that = this;
@@ -42,16 +42,16 @@ var AccountService = function (j_val) {
    @param resultHandler {function} the result handler will be called as soon as the initialization has been accomplished. The async result indicates whether the operation was successful or not. 
    @return {AccountService}
    */
-  this.initializePersistence = function (resultHandler) {
+  this.initializePersistence = function(resultHandler) {
     var __args = arguments;
     if (__args.length === 1 && typeof __args[0] === 'function') {
-      j_accountService["initializePersistence(io.vertx.core.Handler)"](function (ar) {
-        if (ar.succeeded()) {
-          resultHandler(null, null);
-        } else {
-          resultHandler(null, ar.cause());
-        }
-      });
+      j_accountService["initializePersistence(io.vertx.core.Handler)"](function(ar) {
+      if (ar.succeeded()) {
+        resultHandler(null, null);
+      } else {
+        resultHandler(null, ar.cause());
+      }
+    });
       return that;
     } else throw new TypeError('function invoked with invalid arguments');
   };
@@ -64,16 +64,16 @@ var AccountService = function (j_val) {
    @param resultHandler {function} the result handler will be called as soon as the account has been added. The async result indicates whether the operation was successful or not. 
    @return {AccountService}
    */
-  this.addAccount = function (account, resultHandler) {
+  this.addAccount = function(account, resultHandler) {
     var __args = arguments;
     if (__args.length === 2 && (typeof __args[0] === 'object' && __args[0] != null) && typeof __args[1] === 'function') {
-      j_accountService["addAccount(io.vertx.blueprint.microservice.account.Account,io.vertx.core.Handler)"](account != null ? new Account(new JsonObject(JSON.stringify(account))) : null, function (ar) {
-        if (ar.succeeded()) {
-          resultHandler(null, null);
-        } else {
-          resultHandler(null, ar.cause());
-        }
-      });
+      j_accountService["addAccount(io.vertx.blueprint.microservice.account.Account,io.vertx.core.Handler)"](account != null ? new Account(new JsonObject(JSON.stringify(account))) : null, function(ar) {
+      if (ar.succeeded()) {
+        resultHandler(null, null);
+      } else {
+        resultHandler(null, ar.cause());
+      }
+    });
       return that;
     } else throw new TypeError('function invoked with invalid arguments');
   };
@@ -86,16 +86,16 @@ var AccountService = function (j_val) {
    @param resultHandler {function} the result handler will be called as soon as the user has been retrieved. The async result indicates whether the operation was successful or not. 
    @return {AccountService}
    */
-  this.retrieveAccount = function (id, resultHandler) {
+  this.retrieveAccount = function(id, resultHandler) {
     var __args = arguments;
     if (__args.length === 2 && typeof __args[0] === 'string' && typeof __args[1] === 'function') {
-      j_accountService["retrieveAccount(java.lang.String,io.vertx.core.Handler)"](id, function (ar) {
-        if (ar.succeeded()) {
-          resultHandler(utils.convReturnDataObject(ar.result()), null);
-        } else {
-          resultHandler(null, ar.cause());
-        }
-      });
+      j_accountService["retrieveAccount(java.lang.String,io.vertx.core.Handler)"](id, function(ar) {
+      if (ar.succeeded()) {
+        resultHandler(utils.convReturnDataObject(ar.result()), null);
+      } else {
+        resultHandler(null, ar.cause());
+      }
+    });
       return that;
     } else throw new TypeError('function invoked with invalid arguments');
   };
@@ -108,16 +108,16 @@ var AccountService = function (j_val) {
    @param resultHandler {function} the result handler will be called as soon as the user has been retrieved. The async result indicates whether the operation was successful or not. 
    @return {AccountService}
    */
-  this.retrieveByUsername = function (username, resultHandler) {
+  this.retrieveByUsername = function(username, resultHandler) {
     var __args = arguments;
     if (__args.length === 2 && typeof __args[0] === 'string' && typeof __args[1] === 'function') {
-      j_accountService["retrieveByUsername(java.lang.String,io.vertx.core.Handler)"](username, function (ar) {
-        if (ar.succeeded()) {
-          resultHandler(utils.convReturnDataObject(ar.result()), null);
-        } else {
-          resultHandler(null, ar.cause());
-        }
-      });
+      j_accountService["retrieveByUsername(java.lang.String,io.vertx.core.Handler)"](username, function(ar) {
+      if (ar.succeeded()) {
+        resultHandler(utils.convReturnDataObject(ar.result()), null);
+      } else {
+        resultHandler(null, ar.cause());
+      }
+    });
       return that;
     } else throw new TypeError('function invoked with invalid arguments');
   };
@@ -129,16 +129,16 @@ var AccountService = function (j_val) {
    @param resultHandler {function} the result handler will be called as soon as the users have been retrieved. The async result indicates whether the operation was successful or not. 
    @return {AccountService}
    */
-  this.retrieveAllAccounts = function (resultHandler) {
+  this.retrieveAllAccounts = function(resultHandler) {
     var __args = arguments;
     if (__args.length === 1 && typeof __args[0] === 'function') {
-      j_accountService["retrieveAllAccounts(io.vertx.core.Handler)"](function (ar) {
-        if (ar.succeeded()) {
-          resultHandler(utils.convReturnListSetDataObject(ar.result()), null);
-        } else {
-          resultHandler(null, ar.cause());
-        }
-      });
+      j_accountService["retrieveAllAccounts(io.vertx.core.Handler)"](function(ar) {
+      if (ar.succeeded()) {
+        resultHandler(utils.convReturnListSetDataObject(ar.result()), null);
+      } else {
+        resultHandler(null, ar.cause());
+      }
+    });
       return that;
     } else throw new TypeError('function invoked with invalid arguments');
   };
@@ -151,16 +151,16 @@ var AccountService = function (j_val) {
    @param resultHandler {function} the result handler will be called as soon as the account has been added. The async result indicates whether the operation was successful or not. 
    @return {AccountService}
    */
-  this.updateAccount = function (account, resultHandler) {
+  this.updateAccount = function(account, resultHandler) {
     var __args = arguments;
     if (__args.length === 2 && (typeof __args[0] === 'object' && __args[0] != null) && typeof __args[1] === 'function') {
-      j_accountService["updateAccount(io.vertx.blueprint.microservice.account.Account,io.vertx.core.Handler)"](account != null ? new Account(new JsonObject(JSON.stringify(account))) : null, function (ar) {
-        if (ar.succeeded()) {
-          resultHandler(utils.convReturnDataObject(ar.result()), null);
-        } else {
-          resultHandler(null, ar.cause());
-        }
-      });
+      j_accountService["updateAccount(io.vertx.blueprint.microservice.account.Account,io.vertx.core.Handler)"](account != null ? new Account(new JsonObject(JSON.stringify(account))) : null, function(ar) {
+      if (ar.succeeded()) {
+        resultHandler(utils.convReturnDataObject(ar.result()), null);
+      } else {
+        resultHandler(null, ar.cause());
+      }
+    });
       return that;
     } else throw new TypeError('function invoked with invalid arguments');
   };
@@ -173,16 +173,16 @@ var AccountService = function (j_val) {
    @param resultHandler {function} the result handler will be called as soon as the user has been removed. The async result indicates whether the operation was successful or not. 
    @return {AccountService}
    */
-  this.deleteAccount = function (id, resultHandler) {
+  this.deleteAccount = function(id, resultHandler) {
     var __args = arguments;
     if (__args.length === 2 && typeof __args[0] === 'string' && typeof __args[1] === 'function') {
-      j_accountService["deleteAccount(java.lang.String,io.vertx.core.Handler)"](id, function (ar) {
-        if (ar.succeeded()) {
-          resultHandler(null, null);
-        } else {
-          resultHandler(null, ar.cause());
-        }
-      });
+      j_accountService["deleteAccount(java.lang.String,io.vertx.core.Handler)"](id, function(ar) {
+      if (ar.succeeded()) {
+        resultHandler(null, null);
+      } else {
+        resultHandler(null, ar.cause());
+      }
+    });
       return that;
     } else throw new TypeError('function invoked with invalid arguments');
   };
@@ -194,16 +194,16 @@ var AccountService = function (j_val) {
    @param resultHandler {function} the result handler will be called as soon as the users have been removed. The async result indicates whether the operation was successful or not. 
    @return {AccountService}
    */
-  this.deleteAllAccounts = function (resultHandler) {
+  this.deleteAllAccounts = function(resultHandler) {
     var __args = arguments;
     if (__args.length === 1 && typeof __args[0] === 'function') {
-      j_accountService["deleteAllAccounts(io.vertx.core.Handler)"](function (ar) {
-        if (ar.succeeded()) {
-          resultHandler(null, null);
-        } else {
-          resultHandler(null, ar.cause());
-        }
-      });
+      j_accountService["deleteAllAccounts(io.vertx.core.Handler)"](function(ar) {
+      if (ar.succeeded()) {
+        resultHandler(null, null);
+      } else {
+        resultHandler(null, ar.cause());
+      }
+    });
       return that;
     } else throw new TypeError('function invoked with invalid arguments');
   };

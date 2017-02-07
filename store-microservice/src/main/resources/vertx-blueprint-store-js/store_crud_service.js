@@ -29,8 +29,8 @@ var Store = io.vertx.blueprint.microservice.store.Store;
  </p>
 
  @class
- */
-var StoreCRUDService = function (j_val) {
+*/
+var StoreCRUDService = function(j_val) {
 
   var j_storeCRUDService = j_val;
   var that = this;
@@ -43,16 +43,16 @@ var StoreCRUDService = function (j_val) {
    @param store {Object} store object 
    @param resultHandler {function} async result handler 
    */
-  this.saveStore = function (store, resultHandler) {
+  this.saveStore = function(store, resultHandler) {
     var __args = arguments;
     if (__args.length === 2 && (typeof __args[0] === 'object' && __args[0] != null) && typeof __args[1] === 'function') {
-      j_storeCRUDService["saveStore(io.vertx.blueprint.microservice.store.Store,io.vertx.core.Handler)"](store != null ? new Store(new JsonObject(JSON.stringify(store))) : null, function (ar) {
-        if (ar.succeeded()) {
-          resultHandler(null, null);
-        } else {
-          resultHandler(null, ar.cause());
-        }
-      });
+      j_storeCRUDService["saveStore(io.vertx.blueprint.microservice.store.Store,io.vertx.core.Handler)"](store != null ? new Store(new JsonObject(JSON.stringify(store))) : null, function(ar) {
+      if (ar.succeeded()) {
+        resultHandler(null, null);
+      } else {
+        resultHandler(null, ar.cause());
+      }
+    });
     } else throw new TypeError('function invoked with invalid arguments');
   };
 
@@ -63,16 +63,16 @@ var StoreCRUDService = function (j_val) {
    @param sellerId {string} seller id, refers to an independent online store 
    @param resultHandler {function} async result handler 
    */
-  this.retrieveStore = function (sellerId, resultHandler) {
+  this.retrieveStore = function(sellerId, resultHandler) {
     var __args = arguments;
     if (__args.length === 2 && typeof __args[0] === 'string' && typeof __args[1] === 'function') {
-      j_storeCRUDService["retrieveStore(java.lang.String,io.vertx.core.Handler)"](sellerId, function (ar) {
-        if (ar.succeeded()) {
-          resultHandler(utils.convReturnDataObject(ar.result()), null);
-        } else {
-          resultHandler(null, ar.cause());
-        }
-      });
+      j_storeCRUDService["retrieveStore(java.lang.String,io.vertx.core.Handler)"](sellerId, function(ar) {
+      if (ar.succeeded()) {
+        resultHandler(utils.convReturnDataObject(ar.result()), null);
+      } else {
+        resultHandler(null, ar.cause());
+      }
+    });
     } else throw new TypeError('function invoked with invalid arguments');
   };
 
@@ -84,16 +84,16 @@ var StoreCRUDService = function (j_val) {
    @param sellerId {string} seller id, refers to an independent online store 
    @param resultHandler {function} async result handler 
    */
-  this.removeStore = function (sellerId, resultHandler) {
+  this.removeStore = function(sellerId, resultHandler) {
     var __args = arguments;
     if (__args.length === 2 && typeof __args[0] === 'string' && typeof __args[1] === 'function') {
-      j_storeCRUDService["removeStore(java.lang.String,io.vertx.core.Handler)"](sellerId, function (ar) {
-        if (ar.succeeded()) {
-          resultHandler(null, null);
-        } else {
-          resultHandler(null, ar.cause());
-        }
-      });
+      j_storeCRUDService["removeStore(java.lang.String,io.vertx.core.Handler)"](sellerId, function(ar) {
+      if (ar.succeeded()) {
+        resultHandler(null, null);
+      } else {
+        resultHandler(null, ar.cause());
+      }
+    });
     } else throw new TypeError('function invoked with invalid arguments');
   };
 

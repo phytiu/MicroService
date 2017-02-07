@@ -58,7 +58,7 @@ services:
     depends_on:
       - logstash
   inventory-microservice:
-    image: vertx-blueprint/inventory-microservice
+    image: trungnguyenminh/inventory-microservice
     links:
       - config-server
       - redis
@@ -72,7 +72,7 @@ services:
     ports:
       - "8086:8086"
   product-microservice:
-    image: vertx-blueprint/product-microservice
+    image: trungnguyenminh/product-microservice
     links:
       - mysql
       - logstash
@@ -82,7 +82,7 @@ services:
     expose:
       - "8082"
   account-microservice:
-    image: vertx-blueprint/account-microservice
+    image: trungnguyenminh/account-microservice
     links:
       - mysql
       - logstash
@@ -92,7 +92,7 @@ services:
     expose:
       - "8081"
   store-microservice:
-    image: vertx-blueprint/store-microservice
+    image: trungnguyenminh/store-microservice
     links:
       - mongo
       - logstash
@@ -102,7 +102,7 @@ services:
     expose:
       - "8085"
   cache-infrastructure:
-    image: vertx-blueprint/cache-infrastructure
+    image: trungnguyenminh/cache-infrastructure
     links:
       - redis
       - logstash
@@ -110,7 +110,7 @@ services:
       - redis
       - logstash
   shopping-cart-microservice:
-    image: vertx-blueprint/shopping-cart-microservice
+    image: trungnguyenminh/shopping-cart-microservice
     links:
       - mysql
       - logstash
@@ -123,7 +123,7 @@ services:
     expose:
       - "8084"
   order-microservice:
-    image: vertx-blueprint/order-microservice
+    image: trungnguyenminh/order-microservice
     links:
       - mysql
       - logstash
@@ -135,7 +135,7 @@ services:
     expose:
       - "8090"
   monitor-dashboard:
-    image: vertx-blueprint/monitor-dashboard
+    image: trungnguyenminh/monitor-dashboard
     ports:
       - "9100:9100"
     links:
@@ -143,7 +143,7 @@ services:
     depends_on:
       - logstash
   api-gateway:
-    image: vertx-blueprint/api-gateway
+    image: trungnguyenminh/api-gateway
     ports:
       - "8787:8787"
     environment:

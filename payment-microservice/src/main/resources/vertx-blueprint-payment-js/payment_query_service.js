@@ -29,8 +29,8 @@ var Payment = io.vertx.blueprint.microservice.payment.Payment;
  </p>
 
  @class
- */
-var PaymentQueryService = function (j_val) {
+*/
+var PaymentQueryService = function(j_val) {
 
   var j_paymentQueryService = j_val;
   var that = this;
@@ -41,16 +41,16 @@ var PaymentQueryService = function (j_val) {
    @public
    @param resultHandler {function} the result handler will be called as soon as the initialization has been accomplished. The async result indicates whether the operation was successful or not. 
    */
-  this.initializePersistence = function (resultHandler) {
+  this.initializePersistence = function(resultHandler) {
     var __args = arguments;
     if (__args.length === 1 && typeof __args[0] === 'function') {
-      j_paymentQueryService["initializePersistence(io.vertx.core.Handler)"](function (ar) {
-        if (ar.succeeded()) {
-          resultHandler(null, null);
-        } else {
-          resultHandler(null, ar.cause());
-        }
-      });
+      j_paymentQueryService["initializePersistence(io.vertx.core.Handler)"](function(ar) {
+      if (ar.succeeded()) {
+        resultHandler(null, null);
+      } else {
+        resultHandler(null, ar.cause());
+      }
+    });
     } else throw new TypeError('function invoked with invalid arguments');
   };
 
@@ -61,16 +61,16 @@ var PaymentQueryService = function (j_val) {
    @param payment {Object} payment entity 
    @param resultHandler {function} async result handler 
    */
-  this.addPaymentRecord = function (payment, resultHandler) {
+  this.addPaymentRecord = function(payment, resultHandler) {
     var __args = arguments;
     if (__args.length === 2 && (typeof __args[0] === 'object' && __args[0] != null) && typeof __args[1] === 'function') {
-      j_paymentQueryService["addPaymentRecord(io.vertx.blueprint.microservice.payment.Payment,io.vertx.core.Handler)"](payment != null ? new Payment(new JsonObject(JSON.stringify(payment))) : null, function (ar) {
-        if (ar.succeeded()) {
-          resultHandler(null, null);
-        } else {
-          resultHandler(null, ar.cause());
-        }
-      });
+      j_paymentQueryService["addPaymentRecord(io.vertx.blueprint.microservice.payment.Payment,io.vertx.core.Handler)"](payment != null ? new Payment(new JsonObject(JSON.stringify(payment))) : null, function(ar) {
+      if (ar.succeeded()) {
+        resultHandler(null, null);
+      } else {
+        resultHandler(null, ar.cause());
+      }
+    });
     } else throw new TypeError('function invoked with invalid arguments');
   };
 
@@ -81,16 +81,16 @@ var PaymentQueryService = function (j_val) {
    @param payId {string} payment id 
    @param resultHandler {function} async result handler 
    */
-  this.retrievePaymentRecord = function (payId, resultHandler) {
+  this.retrievePaymentRecord = function(payId, resultHandler) {
     var __args = arguments;
     if (__args.length === 2 && typeof __args[0] === 'string' && typeof __args[1] === 'function') {
-      j_paymentQueryService["retrievePaymentRecord(java.lang.String,io.vertx.core.Handler)"](payId, function (ar) {
-        if (ar.succeeded()) {
-          resultHandler(utils.convReturnDataObject(ar.result()), null);
-        } else {
-          resultHandler(null, ar.cause());
-        }
-      });
+      j_paymentQueryService["retrievePaymentRecord(java.lang.String,io.vertx.core.Handler)"](payId, function(ar) {
+      if (ar.succeeded()) {
+        resultHandler(utils.convReturnDataObject(ar.result()), null);
+      } else {
+        resultHandler(null, ar.cause());
+      }
+    });
     } else throw new TypeError('function invoked with invalid arguments');
   };
 

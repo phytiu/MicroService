@@ -29,8 +29,8 @@ var Order = io.vertx.blueprint.microservice.order.Order;
  </p>
 
  @class
- */
-var OrderService = function (j_val) {
+*/
+var OrderService = function(j_val) {
 
   var j_orderService = j_val;
   var that = this;
@@ -42,16 +42,16 @@ var OrderService = function (j_val) {
    @param resultHandler {function} async result handler 
    @return {OrderService}
    */
-  this.initializePersistence = function (resultHandler) {
+  this.initializePersistence = function(resultHandler) {
     var __args = arguments;
     if (__args.length === 1 && typeof __args[0] === 'function') {
-      j_orderService["initializePersistence(io.vertx.core.Handler)"](function (ar) {
-        if (ar.succeeded()) {
-          resultHandler(null, null);
-        } else {
-          resultHandler(null, ar.cause());
-        }
-      });
+      j_orderService["initializePersistence(io.vertx.core.Handler)"](function(ar) {
+      if (ar.succeeded()) {
+        resultHandler(null, null);
+      } else {
+        resultHandler(null, ar.cause());
+      }
+    });
       return that;
     } else throw new TypeError('function invoked with invalid arguments');
   };
@@ -64,16 +64,16 @@ var OrderService = function (j_val) {
    @param resultHandler {function} async result handler 
    @return {OrderService}
    */
-  this.retrieveOrdersForAccount = function (accountId, resultHandler) {
+  this.retrieveOrdersForAccount = function(accountId, resultHandler) {
     var __args = arguments;
     if (__args.length === 2 && typeof __args[0] === 'string' && typeof __args[1] === 'function') {
-      j_orderService["retrieveOrdersForAccount(java.lang.String,io.vertx.core.Handler)"](accountId, function (ar) {
-        if (ar.succeeded()) {
-          resultHandler(utils.convReturnListSetDataObject(ar.result()), null);
-        } else {
-          resultHandler(null, ar.cause());
-        }
-      });
+      j_orderService["retrieveOrdersForAccount(java.lang.String,io.vertx.core.Handler)"](accountId, function(ar) {
+      if (ar.succeeded()) {
+        resultHandler(utils.convReturnListSetDataObject(ar.result()), null);
+      } else {
+        resultHandler(null, ar.cause());
+      }
+    });
       return that;
     } else throw new TypeError('function invoked with invalid arguments');
   };
@@ -86,16 +86,16 @@ var OrderService = function (j_val) {
    @param resultHandler {function} async result handler 
    @return {OrderService}
    */
-  this.createOrder = function (order, resultHandler) {
+  this.createOrder = function(order, resultHandler) {
     var __args = arguments;
     if (__args.length === 2 && (typeof __args[0] === 'object' && __args[0] != null) && typeof __args[1] === 'function') {
-      j_orderService["createOrder(io.vertx.blueprint.microservice.order.Order,io.vertx.core.Handler)"](order != null ? new Order(new JsonObject(JSON.stringify(order))) : null, function (ar) {
-        if (ar.succeeded()) {
-          resultHandler(null, null);
-        } else {
-          resultHandler(null, ar.cause());
-        }
-      });
+      j_orderService["createOrder(io.vertx.blueprint.microservice.order.Order,io.vertx.core.Handler)"](order != null ? new Order(new JsonObject(JSON.stringify(order))) : null, function(ar) {
+      if (ar.succeeded()) {
+        resultHandler(null, null);
+      } else {
+        resultHandler(null, ar.cause());
+      }
+    });
       return that;
     } else throw new TypeError('function invoked with invalid arguments');
   };
@@ -108,16 +108,16 @@ var OrderService = function (j_val) {
    @param resultHandler {function} async result handler 
    @return {OrderService}
    */
-  this.retrieveOrder = function (orderId, resultHandler) {
+  this.retrieveOrder = function(orderId, resultHandler) {
     var __args = arguments;
-    if (__args.length === 2 && typeof __args[0] === 'number' && typeof __args[1] === 'function') {
-      j_orderService["retrieveOrder(java.lang.Long,io.vertx.core.Handler)"](utils.convParamLong(orderId), function (ar) {
-        if (ar.succeeded()) {
-          resultHandler(utils.convReturnDataObject(ar.result()), null);
-        } else {
-          resultHandler(null, ar.cause());
-        }
-      });
+    if (__args.length === 2 && typeof __args[0] ==='number' && typeof __args[1] === 'function') {
+      j_orderService["retrieveOrder(java.lang.Long,io.vertx.core.Handler)"](utils.convParamLong(orderId), function(ar) {
+      if (ar.succeeded()) {
+        resultHandler(utils.convReturnDataObject(ar.result()), null);
+      } else {
+        resultHandler(null, ar.cause());
+      }
+    });
       return that;
     } else throw new TypeError('function invoked with invalid arguments');
   };

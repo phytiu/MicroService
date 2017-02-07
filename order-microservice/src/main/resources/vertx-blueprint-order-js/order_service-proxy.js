@@ -28,22 +28,22 @@
 }(function () {
 
   /**
-   A service interface managing order storage operations.
-   <p>
-   This service is an event bus service (aka. service proxy).
-   </p>
+ A service interface managing order storage operations.
+ <p>
+ This service is an event bus service (aka. service proxy).
+ </p>
 
-   @class
-   */
-  var OrderService = function (eb, address) {
+ @class
+  */
+  var OrderService = function(eb, address) {
 
     var j_eb = eb;
     var j_address = address;
     var closed = false;
     var that = this;
-    var convCharCollection = function (coll) {
+    var convCharCollection = function(coll) {
       var ret = [];
-      for (var i = 0; i < coll.length; i++) {
+      for (var i = 0;i < coll.length;i++) {
         ret.push(String.fromCharCode(coll[i]));
       }
       return ret;
@@ -56,15 +56,13 @@
      @param resultHandler {function} async result handler 
      @return {OrderService}
      */
-    this.initializePersistence = function (resultHandler) {
+    this.initializePersistence = function(resultHandler) {
       var __args = arguments;
       if (__args.length === 1 && typeof __args[0] === 'function') {
         if (closed) {
           throw new Error('Proxy is closed');
         }
-        j_eb.send(j_address, {}, {"action": "initializePersistence"}, function (err, result) {
-          __args[0](err, result && result.body);
-        });
+        j_eb.send(j_address, {}, {"action":"initializePersistence"}, function(err, result) { __args[0](err, result &&result.body); });
         return that;
       } else throw new TypeError('function invoked with invalid arguments');
     };
@@ -77,15 +75,13 @@
      @param resultHandler {function} async result handler 
      @return {OrderService}
      */
-    this.retrieveOrdersForAccount = function (accountId, resultHandler) {
+    this.retrieveOrdersForAccount = function(accountId, resultHandler) {
       var __args = arguments;
       if (__args.length === 2 && typeof __args[0] === 'string' && typeof __args[1] === 'function') {
         if (closed) {
           throw new Error('Proxy is closed');
         }
-        j_eb.send(j_address, {"accountId": __args[0]}, {"action": "retrieveOrdersForAccount"}, function (err, result) {
-          __args[1](err, result && result.body);
-        });
+        j_eb.send(j_address, {"accountId":__args[0]}, {"action":"retrieveOrdersForAccount"}, function(err, result) { __args[1](err, result &&result.body); });
         return that;
       } else throw new TypeError('function invoked with invalid arguments');
     };
@@ -98,15 +94,13 @@
      @param resultHandler {function} async result handler 
      @return {OrderService}
      */
-    this.createOrder = function (order, resultHandler) {
+    this.createOrder = function(order, resultHandler) {
       var __args = arguments;
       if (__args.length === 2 && (typeof __args[0] === 'object' && __args[0] != null) && typeof __args[1] === 'function') {
         if (closed) {
           throw new Error('Proxy is closed');
         }
-        j_eb.send(j_address, {"order": __args[0]}, {"action": "createOrder"}, function (err, result) {
-          __args[1](err, result && result.body);
-        });
+        j_eb.send(j_address, {"order":__args[0]}, {"action":"createOrder"}, function(err, result) { __args[1](err, result &&result.body); });
         return that;
       } else throw new TypeError('function invoked with invalid arguments');
     };
@@ -119,15 +113,13 @@
      @param resultHandler {function} async result handler 
      @return {OrderService}
      */
-    this.retrieveOrder = function (orderId, resultHandler) {
+    this.retrieveOrder = function(orderId, resultHandler) {
       var __args = arguments;
-      if (__args.length === 2 && typeof __args[0] === 'number' && typeof __args[1] === 'function') {
+      if (__args.length === 2 && typeof __args[0] ==='number' && typeof __args[1] === 'function') {
         if (closed) {
           throw new Error('Proxy is closed');
         }
-        j_eb.send(j_address, {"orderId": __args[0]}, {"action": "retrieveOrder"}, function (err, result) {
-          __args[1](err, result && result.body);
-        });
+        j_eb.send(j_address, {"orderId":__args[0]}, {"action":"retrieveOrder"}, function(err, result) { __args[1](err, result &&result.body); });
         return that;
       } else throw new TypeError('function invoked with invalid arguments');
     };

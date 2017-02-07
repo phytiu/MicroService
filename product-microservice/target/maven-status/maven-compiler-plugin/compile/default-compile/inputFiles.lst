@@ -1,0 +1,7 @@
+/home/minhtrung/MicroService/product-microservice/src/main/java/io/vertx/blueprint/microservice/product/ProductTuple.java
+/home/minhtrung/MicroService/product-microservice/src/main/java/io/vertx/blueprint/microservice/product/ProductVerticle.java
+/home/minhtrung/MicroService/product-microservice/src/main/java/io/vertx/blueprint/microservice/product/api/RestProductAPIVerticle.java
+/home/minhtrung/MicroService/product-microservice/src/main/java/io/vertx/blueprint/microservice/product/impl/ProductServiceImpl.java
+/home/minhtrung/MicroService/product-microservice/src/main/java/io/vertx/blueprint/microservice/product/ProductService.java
+/home/minhtrung/MicroService/product-microservice/src/main/java/io/vertx/blueprint/microservice/product/package-info.java
+/home/minhtrung/MicroService/product-microservice/src/main/java/io/vertx/blueprint/microservice/product/Product.java

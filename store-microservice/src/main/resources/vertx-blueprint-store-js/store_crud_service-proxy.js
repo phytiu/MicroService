@@ -28,22 +28,22 @@
 }(function () {
 
   /**
-   A service interface for online store CURD operation.
-   <p>
-   This service is an event bus service (aka. service proxy).
-   </p>
+ A service interface for online store CURD operation.
+ <p>
+ This service is an event bus service (aka. service proxy).
+ </p>
 
-   @class
-   */
-  var StoreCRUDService = function (eb, address) {
+ @class
+  */
+  var StoreCRUDService = function(eb, address) {
 
     var j_eb = eb;
     var j_address = address;
     var closed = false;
     var that = this;
-    var convCharCollection = function (coll) {
+    var convCharCollection = function(coll) {
       var ret = [];
-      for (var i = 0; i < coll.length; i++) {
+      for (var i = 0;i < coll.length;i++) {
         ret.push(String.fromCharCode(coll[i]));
       }
       return ret;
@@ -57,15 +57,13 @@
      @param store {Object} store object 
      @param resultHandler {function} async result handler 
      */
-    this.saveStore = function (store, resultHandler) {
+    this.saveStore = function(store, resultHandler) {
       var __args = arguments;
       if (__args.length === 2 && (typeof __args[0] === 'object' && __args[0] != null) && typeof __args[1] === 'function') {
         if (closed) {
           throw new Error('Proxy is closed');
         }
-        j_eb.send(j_address, {"store": __args[0]}, {"action": "saveStore"}, function (err, result) {
-          __args[1](err, result && result.body);
-        });
+        j_eb.send(j_address, {"store":__args[0]}, {"action":"saveStore"}, function(err, result) { __args[1](err, result &&result.body); });
         return;
       } else throw new TypeError('function invoked with invalid arguments');
     };
@@ -77,15 +75,13 @@
      @param sellerId {string} seller id, refers to an independent online store 
      @param resultHandler {function} async result handler 
      */
-    this.retrieveStore = function (sellerId, resultHandler) {
+    this.retrieveStore = function(sellerId, resultHandler) {
       var __args = arguments;
       if (__args.length === 2 && typeof __args[0] === 'string' && typeof __args[1] === 'function') {
         if (closed) {
           throw new Error('Proxy is closed');
         }
-        j_eb.send(j_address, {"sellerId": __args[0]}, {"action": "retrieveStore"}, function (err, result) {
-          __args[1](err, result && result.body);
-        });
+        j_eb.send(j_address, {"sellerId":__args[0]}, {"action":"retrieveStore"}, function(err, result) { __args[1](err, result &&result.body); });
         return;
       } else throw new TypeError('function invoked with invalid arguments');
     };
@@ -98,15 +94,13 @@
      @param sellerId {string} seller id, refers to an independent online store 
      @param resultHandler {function} async result handler 
      */
-    this.removeStore = function (sellerId, resultHandler) {
+    this.removeStore = function(sellerId, resultHandler) {
       var __args = arguments;
       if (__args.length === 2 && typeof __args[0] === 'string' && typeof __args[1] === 'function') {
         if (closed) {
           throw new Error('Proxy is closed');
         }
-        j_eb.send(j_address, {"sellerId": __args[0]}, {"action": "removeStore"}, function (err, result) {
-          __args[1](err, result && result.body);
-        });
+        j_eb.send(j_address, {"sellerId":__args[0]}, {"action":"removeStore"}, function(err, result) { __args[1](err, result &&result.body); });
         return;
       } else throw new TypeError('function invoked with invalid arguments');
     };

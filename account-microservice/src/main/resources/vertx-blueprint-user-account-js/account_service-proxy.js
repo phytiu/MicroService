@@ -28,22 +28,22 @@
 }(function () {
 
   /**
-   A service interface managing user accounts.
-   <p>
-   This service is an event bus service (aka. service proxy).
-   </p>
+ A service interface managing user accounts.
+ <p>
+ This service is an event bus service (aka. service proxy).
+ </p>
 
-   @class
-   */
-  var AccountService = function (eb, address) {
+ @class
+  */
+  var AccountService = function(eb, address) {
 
     var j_eb = eb;
     var j_address = address;
     var closed = false;
     var that = this;
-    var convCharCollection = function (coll) {
+    var convCharCollection = function(coll) {
       var ret = [];
-      for (var i = 0; i < coll.length; i++) {
+      for (var i = 0;i < coll.length;i++) {
         ret.push(String.fromCharCode(coll[i]));
       }
       return ret;
@@ -56,15 +56,13 @@
      @param resultHandler {function} the result handler will be called as soon as the initialization has been accomplished. The async result indicates whether the operation was successful or not. 
      @return {AccountService}
      */
-    this.initializePersistence = function (resultHandler) {
+    this.initializePersistence = function(resultHandler) {
       var __args = arguments;
       if (__args.length === 1 && typeof __args[0] === 'function') {
         if (closed) {
           throw new Error('Proxy is closed');
         }
-        j_eb.send(j_address, {}, {"action": "initializePersistence"}, function (err, result) {
-          __args[0](err, result && result.body);
-        });
+        j_eb.send(j_address, {}, {"action":"initializePersistence"}, function(err, result) { __args[0](err, result &&result.body); });
         return that;
       } else throw new TypeError('function invoked with invalid arguments');
     };
@@ -77,15 +75,13 @@
      @param resultHandler {function} the result handler will be called as soon as the account has been added. The async result indicates whether the operation was successful or not. 
      @return {AccountService}
      */
-    this.addAccount = function (account, resultHandler) {
+    this.addAccount = function(account, resultHandler) {
       var __args = arguments;
       if (__args.length === 2 && (typeof __args[0] === 'object' && __args[0] != null) && typeof __args[1] === 'function') {
         if (closed) {
           throw new Error('Proxy is closed');
         }
-        j_eb.send(j_address, {"account": __args[0]}, {"action": "addAccount"}, function (err, result) {
-          __args[1](err, result && result.body);
-        });
+        j_eb.send(j_address, {"account":__args[0]}, {"action":"addAccount"}, function(err, result) { __args[1](err, result &&result.body); });
         return that;
       } else throw new TypeError('function invoked with invalid arguments');
     };
@@ -98,15 +94,13 @@
      @param resultHandler {function} the result handler will be called as soon as the user has been retrieved. The async result indicates whether the operation was successful or not. 
      @return {AccountService}
      */
-    this.retrieveAccount = function (id, resultHandler) {
+    this.retrieveAccount = function(id, resultHandler) {
       var __args = arguments;
       if (__args.length === 2 && typeof __args[0] === 'string' && typeof __args[1] === 'function') {
         if (closed) {
           throw new Error('Proxy is closed');
         }
-        j_eb.send(j_address, {"id": __args[0]}, {"action": "retrieveAccount"}, function (err, result) {
-          __args[1](err, result && result.body);
-        });
+        j_eb.send(j_address, {"id":__args[0]}, {"action":"retrieveAccount"}, function(err, result) { __args[1](err, result &&result.body); });
         return that;
       } else throw new TypeError('function invoked with invalid arguments');
     };
@@ -119,15 +113,13 @@
      @param resultHandler {function} the result handler will be called as soon as the user has been retrieved. The async result indicates whether the operation was successful or not. 
      @return {AccountService}
      */
-    this.retrieveByUsername = function (username, resultHandler) {
+    this.retrieveByUsername = function(username, resultHandler) {
       var __args = arguments;
       if (__args.length === 2 && typeof __args[0] === 'string' && typeof __args[1] === 'function') {
         if (closed) {
           throw new Error('Proxy is closed');
         }
-        j_eb.send(j_address, {"username": __args[0]}, {"action": "retrieveByUsername"}, function (err, result) {
-          __args[1](err, result && result.body);
-        });
+        j_eb.send(j_address, {"username":__args[0]}, {"action":"retrieveByUsername"}, function(err, result) { __args[1](err, result &&result.body); });
         return that;
       } else throw new TypeError('function invoked with invalid arguments');
     };
@@ -139,15 +131,13 @@
      @param resultHandler {function} the result handler will be called as soon as the users have been retrieved. The async result indicates whether the operation was successful or not. 
      @return {AccountService}
      */
-    this.retrieveAllAccounts = function (resultHandler) {
+    this.retrieveAllAccounts = function(resultHandler) {
       var __args = arguments;
       if (__args.length === 1 && typeof __args[0] === 'function') {
         if (closed) {
           throw new Error('Proxy is closed');
         }
-        j_eb.send(j_address, {}, {"action": "retrieveAllAccounts"}, function (err, result) {
-          __args[0](err, result && result.body);
-        });
+        j_eb.send(j_address, {}, {"action":"retrieveAllAccounts"}, function(err, result) { __args[0](err, result &&result.body); });
         return that;
       } else throw new TypeError('function invoked with invalid arguments');
     };
@@ -160,15 +150,13 @@
      @param resultHandler {function} the result handler will be called as soon as the account has been added. The async result indicates whether the operation was successful or not. 
      @return {AccountService}
      */
-    this.updateAccount = function (account, resultHandler) {
+    this.updateAccount = function(account, resultHandler) {
       var __args = arguments;
       if (__args.length === 2 && (typeof __args[0] === 'object' && __args[0] != null) && typeof __args[1] === 'function') {
         if (closed) {
           throw new Error('Proxy is closed');
         }
-        j_eb.send(j_address, {"account": __args[0]}, {"action": "updateAccount"}, function (err, result) {
-          __args[1](err, result && result.body);
-        });
+        j_eb.send(j_address, {"account":__args[0]}, {"action":"updateAccount"}, function(err, result) { __args[1](err, result &&result.body); });
         return that;
       } else throw new TypeError('function invoked with invalid arguments');
     };
@@ -181,15 +169,13 @@
      @param resultHandler {function} the result handler will be called as soon as the user has been removed. The async result indicates whether the operation was successful or not. 
      @return {AccountService}
      */
-    this.deleteAccount = function (id, resultHandler) {
+    this.deleteAccount = function(id, resultHandler) {
       var __args = arguments;
       if (__args.length === 2 && typeof __args[0] === 'string' && typeof __args[1] === 'function') {
         if (closed) {
           throw new Error('Proxy is closed');
         }
-        j_eb.send(j_address, {"id": __args[0]}, {"action": "deleteAccount"}, function (err, result) {
-          __args[1](err, result && result.body);
-        });
+        j_eb.send(j_address, {"id":__args[0]}, {"action":"deleteAccount"}, function(err, result) { __args[1](err, result &&result.body); });
         return that;
       } else throw new TypeError('function invoked with invalid arguments');
     };
@@ -201,15 +187,13 @@
      @param resultHandler {function} the result handler will be called as soon as the users have been removed. The async result indicates whether the operation was successful or not. 
      @return {AccountService}
      */
-    this.deleteAllAccounts = function (resultHandler) {
+    this.deleteAllAccounts = function(resultHandler) {
       var __args = arguments;
       if (__args.length === 1 && typeof __args[0] === 'function') {
         if (closed) {
           throw new Error('Proxy is closed');
         }
-        j_eb.send(j_address, {}, {"action": "deleteAllAccounts"}, function (err, result) {
-          __args[0](err, result && result.body);
-        });
+        j_eb.send(j_address, {}, {"action":"deleteAllAccounts"}, function(err, result) { __args[0](err, result &&result.body); });
         return that;
       } else throw new TypeError('function invoked with invalid arguments');
     };

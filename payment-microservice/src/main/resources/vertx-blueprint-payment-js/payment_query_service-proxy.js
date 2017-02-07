@@ -28,22 +28,22 @@
 }(function () {
 
   /**
-   A service interface managing payment transactions query.
-   <p>
-   This service is an event bus service (aka. service proxy).
-   </p>
+ A service interface managing payment transactions query.
+ <p>
+ This service is an event bus service (aka. service proxy).
+ </p>
 
-   @class
-   */
-  var PaymentQueryService = function (eb, address) {
+ @class
+  */
+  var PaymentQueryService = function(eb, address) {
 
     var j_eb = eb;
     var j_address = address;
     var closed = false;
     var that = this;
-    var convCharCollection = function (coll) {
+    var convCharCollection = function(coll) {
       var ret = [];
-      for (var i = 0; i < coll.length; i++) {
+      for (var i = 0;i < coll.length;i++) {
         ret.push(String.fromCharCode(coll[i]));
       }
       return ret;
@@ -55,15 +55,13 @@
      @public
      @param resultHandler {function} the result handler will be called as soon as the initialization has been accomplished. The async result indicates whether the operation was successful or not. 
      */
-    this.initializePersistence = function (resultHandler) {
+    this.initializePersistence = function(resultHandler) {
       var __args = arguments;
       if (__args.length === 1 && typeof __args[0] === 'function') {
         if (closed) {
           throw new Error('Proxy is closed');
         }
-        j_eb.send(j_address, {}, {"action": "initializePersistence"}, function (err, result) {
-          __args[0](err, result && result.body);
-        });
+        j_eb.send(j_address, {}, {"action":"initializePersistence"}, function(err, result) { __args[0](err, result &&result.body); });
         return;
       } else throw new TypeError('function invoked with invalid arguments');
     };
@@ -75,15 +73,13 @@
      @param payment {Object} payment entity 
      @param resultHandler {function} async result handler 
      */
-    this.addPaymentRecord = function (payment, resultHandler) {
+    this.addPaymentRecord = function(payment, resultHandler) {
       var __args = arguments;
       if (__args.length === 2 && (typeof __args[0] === 'object' && __args[0] != null) && typeof __args[1] === 'function') {
         if (closed) {
           throw new Error('Proxy is closed');
         }
-        j_eb.send(j_address, {"payment": __args[0]}, {"action": "addPaymentRecord"}, function (err, result) {
-          __args[1](err, result && result.body);
-        });
+        j_eb.send(j_address, {"payment":__args[0]}, {"action":"addPaymentRecord"}, function(err, result) { __args[1](err, result &&result.body); });
         return;
       } else throw new TypeError('function invoked with invalid arguments');
     };
@@ -95,15 +91,13 @@
      @param payId {string} payment id 
      @param resultHandler {function} async result handler 
      */
-    this.retrievePaymentRecord = function (payId, resultHandler) {
+    this.retrievePaymentRecord = function(payId, resultHandler) {
       var __args = arguments;
       if (__args.length === 2 && typeof __args[0] === 'string' && typeof __args[1] === 'function') {
         if (closed) {
           throw new Error('Proxy is closed');
         }
-        j_eb.send(j_address, {"payId": __args[0]}, {"action": "retrievePaymentRecord"}, function (err, result) {
-          __args[1](err, result && result.body);
-        });
+        j_eb.send(j_address, {"payId":__args[0]}, {"action":"retrievePaymentRecord"}, function(err, result) { __args[1](err, result &&result.body); });
         return;
       } else throw new TypeError('function invoked with invalid arguments');
     };

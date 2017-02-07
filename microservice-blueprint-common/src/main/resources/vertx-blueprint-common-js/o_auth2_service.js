@@ -27,8 +27,8 @@ var Record = io.vertx.servicediscovery.Record;
 /**
 
  @class
- */
-var OAuth2Service = function (j_val) {
+*/
+var OAuth2Service = function(j_val) {
 
   var j_oAuth2Service = j_val;
   var that = this;
@@ -47,7 +47,7 @@ var OAuth2Service = function (j_val) {
  @param metadata {Object} 
  @return {Object}
  */
-OAuth2Service.createRecord = function (name, config, metadata) {
+OAuth2Service.createRecord = function(name, config, metadata) {
   var __args = arguments;
   if (__args.length === 3 && typeof __args[0] === 'string' && (typeof __args[1] === 'object' && __args[1] != null) && (typeof __args[2] === 'object' && __args[2] != null)) {
     return utils.convReturnDataObject(JOAuth2Service["createRecord(java.lang.String,io.vertx.core.json.JsonObject,io.vertx.core.json.JsonObject)"](name, utils.convParamJsonObject(config), utils.convParamJsonObject(metadata)));
@@ -62,24 +62,24 @@ OAuth2Service.createRecord = function (name, config, metadata) {
  @param consumerConfiguration {Object} 
  @param resultHandler {function} 
  */
-OAuth2Service.getOAuth2Provider = function () {
+OAuth2Service.getOAuth2Provider = function() {
   var __args = arguments;
   if (__args.length === 3 && typeof __args[0] === 'object' && __args[0]._jdel && (typeof __args[1] === 'object' && __args[1] != null) && typeof __args[2] === 'function') {
-    JOAuth2Service["getOAuth2Provider(io.vertx.servicediscovery.ServiceDiscovery,io.vertx.core.json.JsonObject,io.vertx.core.Handler)"](__args[0]._jdel, utils.convParamJsonObject(__args[1]), function (ar) {
-      if (ar.succeeded()) {
-        __args[2](utils.convReturnVertxGen(ar.result(), OAuth2Auth), null);
-      } else {
-        __args[2](null, ar.cause());
-      }
-    });
-  } else if (__args.length === 4 && typeof __args[0] === 'object' && __args[0]._jdel && (typeof __args[1] === 'object' && __args[1] != null) && (typeof __args[2] === 'object' && __args[2] != null) && typeof __args[3] === 'function') {
-    JOAuth2Service["getOAuth2Provider(io.vertx.servicediscovery.ServiceDiscovery,io.vertx.core.json.JsonObject,io.vertx.core.json.JsonObject,io.vertx.core.Handler)"](__args[0]._jdel, utils.convParamJsonObject(__args[1]), utils.convParamJsonObject(__args[2]), function (ar) {
-      if (ar.succeeded()) {
-        __args[3](utils.convReturnVertxGen(ar.result(), OAuth2Auth), null);
-      } else {
-        __args[3](null, ar.cause());
-      }
-    });
+    JOAuth2Service["getOAuth2Provider(io.vertx.servicediscovery.ServiceDiscovery,io.vertx.core.json.JsonObject,io.vertx.core.Handler)"](__args[0]._jdel, utils.convParamJsonObject(__args[1]), function(ar) {
+    if (ar.succeeded()) {
+      __args[2](utils.convReturnVertxGen(ar.result(), OAuth2Auth), null);
+    } else {
+      __args[2](null, ar.cause());
+    }
+  });
+  }else if (__args.length === 4 && typeof __args[0] === 'object' && __args[0]._jdel && (typeof __args[1] === 'object' && __args[1] != null) && (typeof __args[2] === 'object' && __args[2] != null) && typeof __args[3] === 'function') {
+    JOAuth2Service["getOAuth2Provider(io.vertx.servicediscovery.ServiceDiscovery,io.vertx.core.json.JsonObject,io.vertx.core.json.JsonObject,io.vertx.core.Handler)"](__args[0]._jdel, utils.convParamJsonObject(__args[1]), utils.convParamJsonObject(__args[2]), function(ar) {
+    if (ar.succeeded()) {
+      __args[3](utils.convReturnVertxGen(ar.result(), OAuth2Auth), null);
+    } else {
+      __args[3](null, ar.cause());
+    }
+  });
   } else throw new TypeError('function invoked with invalid arguments');
 };
 
