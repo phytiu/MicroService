@@ -1,5 +1,0 @@
-{
-  "monitor.http.port": 9100,
-  "monitor.http.host": "0.0.0.0",
-  "monitor.metrics.interval": 5000
-}
